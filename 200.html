@@ -2,12 +2,21 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/clover-admin-deploy/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clover Admin</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-    <script type="module" crossorigin src="/assets/index-qcjKz41Z.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Db8kUpvO.css">
+    <script type="module" crossorigin src="/clover-admin-deploy/assets/index-qcjKz41Z.js"></script>
+    <link rel="stylesheet" crossorigin href="/clover-admin-deploy/assets/index-Db8kUpvO.css">
   </head>
   <body>
     <div id="root"></div>
